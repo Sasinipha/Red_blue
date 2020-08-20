@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/whitegray"
+    tools:context=".ledcontrol">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/tt0140m_"
+                android:text="LED"
+                android:textColor="@color/blood_red"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/photored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/tt0140m_"
+                    android:text="Photo Red"
+                    android:textColor="@color/blood_red"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <SeekBar
+                    android:id="@+id/seekbar_photored"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/track_photored"
+                    android:thumb="@drawable/thumb_photored" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/tt0140m_"
+                    android:text="Green"
+                    android:textColor="@color/blood_red"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+
+                <SeekBar
+                    android:id="@+id/seekbar_green"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="58dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/track_green"
+                    android:thumb="@drawable/thumb_green" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/moonlight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/tt0140m_"
+                    android:text="Moon Light"
+                    android:textColor="@color/blood_red"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <SeekBar
+                    android:id="@+id/seekbar_moonlight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/track_moonlight"
+                    android:thumb="@drawable/thumb_moonlight" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/coolwhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/tt0140m_"
+                    android:text="Cool White"
+                    android:textColor="@color/blood_red"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+
+                <SeekBar
+                    android:id="@+id/seekbar_coolwhite"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/track_coolwhite"
+                    android:thumb="@drawable/thumb_coolwhite" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/tt0140m_"
+                    android:text="Blue"
+                    android:textColor="@color/blood_red"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+
+                <SeekBar
+                    android:id="@+id/seekbar_blue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="82dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/track_blue"
+                    android:thumb="@drawable/thumb_blue" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/royalblue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/tt0140m_"
+                    android:text="Royal Blue"
+                    android:textColor="@color/blood_red"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <SeekBar
+                    android:id="@+id/seekbar_royalblue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/track_royalblue"
+                    android:thumb="@drawable/thumb_royalblue" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/uv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/tt0140m_"
+                    android:text="UV"
+                    android:textColor="@color/blood_red"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <SeekBar
+                    android:id="@+id/seekbar_uv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="95dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/track_uv"
+                    android:thumb="@drawable/thumb_uv" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/violet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/tt0140m_"
+                    android:text="Violet"
+                    android:textColor="@color/blood_red"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <SeekBar
+                    android:id="@+id/seekbar_violet"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="67dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/track_violet"
+                    android:thumb="@drawable/thumb_violet" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="245dp"
+                android:layout_gravity="center_vertical">
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/button_whiterec"
+                    android:text="Cancel"
+                    android:textColor="@color/blood_red"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/button_whiterec"
+                    android:text="Done"
+                    android:textColor="@color/blood_red"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

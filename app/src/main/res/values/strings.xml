@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Red Blue</string>
+    <string name="user">  Username</string>
+    <string name="password">  Password</string>
+    <string name="conpass">  Confirm Password</string>
+    <string name="wel">Welcome</string>
+    <string name="Reg">Register</string>
+    <string name="logoRed"></string>
+    <string name="login">Login</string>
+    <string name="submit">Submit</string>
+    <string name="set">Set</string>
+    <string name="or">OR</string>
+</resources>

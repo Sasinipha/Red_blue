@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/whitegray"
+    tools:context=".ledmode">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/tt0140m_"
+            android:text="LED"
+            android:textColor="@color/blood_red"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/auto"
+                android:text="Auto"
+                android:textColor="@color/dark_red"
+                android:textSize="30sp"
+                android:fontFamily="@font/tt0140m_"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sw_auto"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:textOff="OFF"
+                android:textOn="ON"
+                android:gravity="center"
+                android:thumb="@drawable/sw_thumb"
+                app:track="@drawable/sw_track"
+                app:showText="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/custom"
+                android:text="Custom"
+                android:textColor="@color/dark_red"
+                android:textSize="30sp"
+                android:fontFamily="@font/tt0140m_"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sw_custom"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:textOff="OFF"
+                android:textOn="ON"
+                android:gravity="center"
+                android:thumb="@drawable/sw_thumb"
+                app:track="@drawable/sw_track"
+                app:showText="true"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
