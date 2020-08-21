@@ -30,13 +30,13 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/edName"
-                android:autofillHints="@string/user"
+                android:id="@+id/loginemail"
+                android:autofillHints="Email"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:inputType="textPersonName"
-                android:hint="@string/user"
+                android:inputType="textEmailAddress"
+                android:hint="Email"
                 android:textColorHint="@color/blood_red"
                 android:layout_marginTop="50dp"
                 android:padding="20dp"

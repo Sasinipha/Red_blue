@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1016058191287",
+    "firebase_url": "https://red-blue-4c720.firebaseio.com",
+    "project_id": "red-blue-4c720",
+    "storage_bucket": "red-blue-4c720.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1016058191287:android:2a993d80790c3f250d5c32",
+        "android_client_info": {
+          "package_name": "com.example.red_blue"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1016058191287-mhakt7ta5c01dpbjtk8l2pcjj5tkkqf2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSRG4isjuWVxkB8hZHIM8QyXd3jrRR2MQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1016058191287-mhakt7ta5c01dpbjtk8l2pcjj5tkkqf2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
