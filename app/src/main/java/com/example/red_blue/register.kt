@@ -7,12 +7,14 @@ import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_register.*
 
 class register : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
 
         val bt_submit = findViewById<Button>(R.id.submit_regist)
 
@@ -43,6 +45,7 @@ class register : AppCompatActivity() {
                 }
                 else{
                     Toast.makeText(this, "Create Success",Toast.LENGTH_SHORT).show()
+                    saveusertoFirebaseDatabase()
                     val c = Intent( this, ledmode ::class.java)
                     startActivity(c)
                 } // else if successful
@@ -51,4 +54,17 @@ class register : AppCompatActivity() {
                 Log.d("register", "Failed to create user: ${it.message}")
             }
     }
+
+    private fun saveusertoFirebaseDatabase(){
+        val username = reName.text.toString()
+        val ref = FirebaseDatabase.getInstance().getReference("/user/$username")
+
+        val user = FirebaseAuth.getInstance().uid?.let { User(it, reName.text.toString()) }
+        ref.setValue(user)
+            .addOnSuccessListener {
+                Log.d("regist", "save the user to Firebase Database")
+            }
+    }
 }
+
+class User (val uid : String, val username : String)
