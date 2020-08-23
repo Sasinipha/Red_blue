@@ -133,5 +133,5 @@ class ledcontrol : AppCompatActivity() {
             startActivity(f)
         }
     }
-}
+} // fighting :)
 
