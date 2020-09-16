@@ -55,4 +55,4 @@ class ledmode : AppCompatActivity() {
         sw_auto.isChecked = savedboolean_auto
         sw_custom.isChecked = savedboolean_custom
     }
-}
+} // don't add to the berden of embedded too much.
