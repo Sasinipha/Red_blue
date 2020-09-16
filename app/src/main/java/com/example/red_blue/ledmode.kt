@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_ledmode.*
 
 class ledmode : AppCompatActivity() {
@@ -15,20 +16,30 @@ class ledmode : AppCompatActivity() {
 
         sw_custom.setOnClickListener {
             savedata()
-            if(sw_custom.isChecked){
-                val d = Intent(this , ledcontrol::class.java)
-                startActivity(d)
-            }
         }
 
         sw_auto.setOnClickListener {
             savedata()
         }
 
+        next.setOnClickListener{
+            if(!sw_auto.isChecked && sw_custom.isChecked){
+                val d = Intent(this , ledcontrol::class.java)
+                startActivity(d)
+            } else if (sw_auto.isChecked && !sw_custom.isChecked){
+                val e = Intent(this, settime :: class.java)
+                startActivity(e)
+            } else if (!sw_auto.isChecked && !sw_custom.isChecked){
+                Toast.makeText(this,"Please select mode",Toast.LENGTH_SHORT).show()
+            }else {
+                Toast.makeText(this,"Please choose 1 mode",Toast.LENGTH_SHORT).show()
+            }
+        }
+
     }
 
     private fun savedata(){
-        val sharedPreferences = getSharedPreferences("shareed", Context.MODE_PRIVATE)
+        val sharedPreferences = getSharedPreferences("mode_shareed", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.apply {
             putBoolean("boolean_key_custom",sw_custom.isChecked)
@@ -37,7 +48,7 @@ class ledmode : AppCompatActivity() {
     }
 
     private fun loadData(){
-        val sharedPreferences = getSharedPreferences("shareed", Context.MODE_PRIVATE)
+        val sharedPreferences = getSharedPreferences("mode_shareed", Context.MODE_PRIVATE)
         val savedboolean_auto = sharedPreferences.getBoolean("boolean_key_auto",false)
         val savedboolean_custom = sharedPreferences.getBoolean("boolean_key_custom",false)
 

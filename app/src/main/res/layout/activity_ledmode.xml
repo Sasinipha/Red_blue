@@ -92,6 +92,25 @@
 
             </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="30dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/next"
+                    android:text="Next"
+                    android:textColor="@color/gogreen"
+                    android:textSize="23sp"
+                    android:fontFamily="@font/tt0140m_"
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentRight="true"/>
+
+            </RelativeLayout>
+
         </LinearLayout>
 
     </ScrollView>
