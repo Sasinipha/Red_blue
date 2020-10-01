@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_ledmode.*
 
 class ledmode : AppCompatActivity() {
@@ -27,6 +28,15 @@ class ledmode : AppCompatActivity() {
                 val d = Intent(this , ledcontrol::class.java)
                 startActivity(d)
             } else if (sw_auto.isChecked && !sw_custom.isChecked){
+                val ref = FirebaseDatabase.getInstance().getReference("user/LED/")
+                ref.child("Photo Red").setValue(20)
+                ref.child("Green").setValue(15)
+                ref.child("Moon Light").setValue(5)
+                ref.child("Cool White").setValue(5)
+                ref.child("Blue").setValue(70)
+                ref.child("Royal Blue").setValue(80)
+                ref.child("UV").setValue(40)
+                ref.child("Violet").setValue(30)
                 val e = Intent(this, settime :: class.java)
                 startActivity(e)
             } else if (!sw_auto.isChecked && !sw_custom.isChecked){
