@@ -46,7 +46,7 @@ class register : AppCompatActivity() {
                 else{
                     Toast.makeText(this, "Create Success",Toast.LENGTH_SHORT).show()
                     saveusertoFirebaseDatabase()
-                    val c = Intent( this, ledmode ::class.java)
+                    val c = Intent( this, home ::class.java)
                     startActivity(c)
                 } // else if successful
             }

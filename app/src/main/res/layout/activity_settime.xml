@@ -95,7 +95,7 @@
                 <Button
                     android:layout_width="100dp"
                     android:layout_height="50dp"
-                    android:id="@+id/bt_set_time"
+                    android:id="@+id/bt_settime"
                     android:layout_gravity="center"
                     android:text="Set"
                     android:layout_centerInParent="true"

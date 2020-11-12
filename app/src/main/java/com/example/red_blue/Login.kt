@@ -46,7 +46,7 @@ class Login : AppCompatActivity() {
                 }
                 else{
                     Toast.makeText(this, "Login Sucess",Toast.LENGTH_SHORT).show()
-                    val a = Intent( this, ledmode ::class.java)
+                    val a = Intent( this, home ::class.java)
                     startActivity(a)
                 } // else if successful
             }

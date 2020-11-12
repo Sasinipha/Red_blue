@@ -15,6 +15,15 @@ class ledmode : AppCompatActivity() {
 
         loadData()
 
+        val pr = 50
+        val gr = 30
+        val ml = 100
+        val cw = 100
+        val bl = 100
+        val ryb = 100
+        val uv = 100
+        val vl = 100
+
         sw_custom.setOnClickListener {
             savedata()
         }
@@ -29,15 +38,16 @@ class ledmode : AppCompatActivity() {
                 startActivity(d)
             } else if (sw_auto.isChecked && !sw_custom.isChecked){
                 val ref = FirebaseDatabase.getInstance().getReference("user/LED/")
-                ref.child("Photo Red").setValue(20)
-                ref.child("Green").setValue(15)
-                ref.child("Moon Light").setValue(5)
-                ref.child("Cool White").setValue(5)
-                ref.child("Blue").setValue(70)
-                ref.child("Royal Blue").setValue(80)
-                ref.child("UV").setValue(40)
-                ref.child("Violet").setValue(30)
-                val e = Intent(this, settime :: class.java)
+
+                ref.child("Photo Red").setValue(pr)
+                ref.child("Green").setValue(gr)
+                ref.child("Moon Light").setValue(ml)
+                ref.child("Cool White").setValue(cw)
+                ref.child("Blue").setValue(bl)
+                ref.child("Royal Blue").setValue(ryb)
+                ref.child("UV").setValue(uv)
+                ref.child("Violet").setValue(vl)
+                val e = Intent(this, home :: class.java)
                 startActivity(e)
             } else if (!sw_auto.isChecked && !sw_custom.isChecked){
                 Toast.makeText(this,"Please select mode",Toast.LENGTH_SHORT).show()

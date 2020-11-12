@@ -1,5 +1,6 @@
 package com.example.red_blue
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -18,7 +19,7 @@ class ledcontrol : AppCompatActivity() {
         setContentView(R.layout.activity_ledcontrol)
 
 
-        seekbar_photored.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+        var pr = seekbar_photored.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, progress_red: Int, p2: Boolean) {
             }
 
@@ -32,7 +33,7 @@ class ledcontrol : AppCompatActivity() {
             }
         })
 
-        seekbar_green.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+        var gr = seekbar_green.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, progress_green: Int, p2: Boolean) {
             }
 
@@ -46,7 +47,7 @@ class ledcontrol : AppCompatActivity() {
             }
         })
 
-        seekbar_moonlight.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+        var ml = seekbar_moonlight.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, progress_moon: Int, p2: Boolean) {
             }
 
@@ -60,7 +61,7 @@ class ledcontrol : AppCompatActivity() {
             }
         })
 
-        seekbar_coolwhite.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+        var cw = seekbar_coolwhite.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, progress_cool: Int, p2: Boolean) {
             }
 
@@ -74,7 +75,7 @@ class ledcontrol : AppCompatActivity() {
             }
         })
 
-        seekbar_blue.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+        var bl = seekbar_blue.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, progress_blue: Int, p2: Boolean) {
             }
 
@@ -88,7 +89,7 @@ class ledcontrol : AppCompatActivity() {
             }
         })
 
-        seekbar_royalblue.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+        var ryb = seekbar_royalblue.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, progress_royalblue: Int, p2: Boolean) {
             }
 
@@ -102,7 +103,7 @@ class ledcontrol : AppCompatActivity() {
             }
         })
 
-        seekbar_uv.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+        var uv = seekbar_uv.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, progress_uv: Int, p2: Boolean) {
             }
 
@@ -116,7 +117,7 @@ class ledcontrol : AppCompatActivity() {
             }
         })
 
-        seekbar_violet.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+        var vl = seekbar_violet.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, progress_violet: Int, p2: Boolean) {
             }
 
@@ -130,30 +131,34 @@ class ledcontrol : AppCompatActivity() {
             }
         })
 
-        /*val LED = getSharedPreferences("LED", Context.MODE_PRIVATE)
-        val editor = LED.edit()
-
-        editor.putInt("photo_red",pr)
-        editor.putInt("green",gr)
-        editor.putInt("moon_light",ml)
-        editor.putInt("cool_white",cw)
-        editor.putInt("blue",bl)
-        editor.putInt("royal_blue",ryb)
-        editor.putInt("uv",uv)
-        editor.putInt("violet",vl)
-        editor.commit()*/
 
         bt_done.setOnClickListener {
-            val e = Intent(this, settime :: class.java)
+            /*val LED = getSharedPreferences("LED", Context.MODE_PRIVATE)
+            val editor = LED.edit()
+
+            editor.putInt("photo_red",pr)
+            editor.putInt("green",gr)
+            editor.putInt("moon_light",ml)
+            editor.putInt("cool_white",cw)
+            editor.putInt("blue",bl)
+            editor.putInt("royal_blue",ryb)
+            editor.putInt("uv",uv)
+            editor.putInt("violet",vl)
+            editor.commit()*/
+
+            /*val ref = FirebaseDatabase.getInstance().getReference("user/LED/")
+            //val led = LED(pr,gr,ml,cw,bl,ryb,uv,vl)
+            ref.child("Photo Red").setValue(pr)
+            ref.child("Green").setValue(gr)
+            ref.child("Moon Light").setValue(ml)
+            ref.child("Cool White").setValue(cw)
+            ref.child("Blue").setValue(bl)
+            ref.child("Royal Blue").setValue(ryb)
+            ref.child("UV").setValue(uv)
+            ref.child("Violet").setValue(vl)*/
+            val e = Intent(this, home :: class.java)
             startActivity(e)
         }
-
-
-        /*bt_done.setOnClickListener {
-            val ref = FirebaseDatabase.getInstance().getReference("user/LED/")
-            val led = LED(pr,gr,ml,cw,bl,ryb,uv,vl)
-            ref.setValue(led)
-        }*/
 
 
         bt_cancel.setOnClickListener {
@@ -161,6 +166,27 @@ class ledcontrol : AppCompatActivity() {
             startActivity(f)
         }
     }
+
+    /*private fun loadLEDdata(p:Int,g:Int,m:Int,c:Int,b:Int,r:Int,uv:Int,v:Int){
+        val LED = getSharedPreferences("LED", Context.MODE_PRIVATE)
+        var pr = LED.getInt("photo_red",p)
+        var gr = LED.getInt("green",g)
+        var ml = LED.getInt("moon_light",m)
+        var cw = LED.getInt("cool_white",c)
+        var bl = LED.getInt("blue",b)
+        var ryb = LED.getInt("royal_blue",r)
+        var uv = LED.getInt("uv",uv)
+        var vl = LED.getInt("violet",v)
+
+        seekbar_photored.progress = pr
+        seekbar_green.progress = gr
+        seekbar_moonlight.progress = ml
+        seekbar_coolwhite.progress = cw
+        seekbar_blue.progress = bl
+        seekbar_royalblue.progress = ryb
+        seekbar_uv.progress = uv
+        seekbar_violet.progress = vl
+    }*/
 
 } // fighting :)
 
